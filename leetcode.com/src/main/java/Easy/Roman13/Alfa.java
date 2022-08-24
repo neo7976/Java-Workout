@@ -15,7 +15,7 @@ public class Alfa {
         put("M", 1000);
     }};
 
-      public void entry() {
+    public void entry() {
         for (Entry<String, Integer> entry : alphabet.entrySet()) {
             System.out.printf("Ключ:%s Значение: %4d\n", entry.getKey(), entry.getValue());
         }
@@ -34,22 +34,18 @@ public class Alfa {
                 result += 9;
                 array[i] = "";
                 array[i - 1] = "";
-
             } else if (sum.contains("XL")) {
                 result += 40;
                 array[i] = "";
                 array[i - 1] = "";
-
             } else if (sum.contains("XC")) {
                 result += 90;
                 array[i] = "";
                 array[i - 1] = "";
-
             } else if (sum.contains("CD")) {
                 result += 400;
                 array[i] = "";
                 array[i - 1] = "";
-
             } else if (sum.contains("CM")) {
                 result += 900;
                 array[i] = "";

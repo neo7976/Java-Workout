@@ -23,7 +23,7 @@ class AlfaTest {
 
     @AfterEach
     void tearDown() {
-        System.out.println("\nКонец теста");
+        System.out.println("Конец теста");
         alfa = null;
     }
 
