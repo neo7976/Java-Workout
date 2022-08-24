@@ -21,8 +21,11 @@ public class Alfa {
         }
     }
 
-    public void romanToInteger(String s) {
-        if(alphabet.containsKey(s))
-        System.out.println(alphabet.get(s));
+    public int romanToInteger(String s) {
+        int result = -1;
+        if (alphabet.containsKey(s)) {
+            result = alphabet.get(s);
+        }
+        return result;
     }
 }
