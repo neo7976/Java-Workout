@@ -28,7 +28,8 @@ public class Roman {
         }
     }
 
-    public String arabToRoman(int value) {
+    public String arabToRoman(int value) throws NotValidateException {
+        validate(value);
         StringBuilder sb = new StringBuilder();
         for (Entry<Integer, String> entry : alphabet.entrySet()) {
             if (value >= entry.getKey()) {
@@ -39,6 +40,11 @@ public class Roman {
             }
         }
         return sb.toString();
+    }
+
+    public void validate(int value) throws NotValidateException {
+        if (!(1 <= value && value <= 3999))
+            throw new NotValidateException("Число больше 3999 или меньше 1");
     }
 }
 

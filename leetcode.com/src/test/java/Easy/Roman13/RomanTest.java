@@ -3,7 +3,7 @@ package Easy.Roman13;
 import org.hamcrest.MatcherAssert;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.AfterEach;
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -49,8 +49,14 @@ class RomanTest {
 
     @ParameterizedTest
     @MethodSource("source")
-    void arabToRoman(int value, String expected) {
+    void arabToRoman(int value, String expected) throws NotValidateException {
         String result = romanAlphabet.arabToRoman(value);
         MatcherAssert.assertThat(result, Matchers.equalTo(expected));
+    }
+
+    @Test
+    void validate_test() {
+        Assertions.assertThrows(NotValidateException.class, () -> romanAlphabet.validate(4000));
+        Assertions.assertDoesNotThrow(() -> romanAlphabet.validate(1000));
     }
 }
