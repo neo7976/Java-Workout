@@ -22,9 +22,44 @@ public class Alfa {
     }
 
     public int romanToInteger(String s) {
-        int result = -1;
-        if (alphabet.containsKey(s)) {
-            result = alphabet.get(s);
+        int result = 0;
+        String[] array = s.split("");
+        for (int i = 1; i < array.length; i++) {
+            String sum = array[i - 1].concat(array[i]);
+            if (sum.contains("IV")) {
+                result += 4;
+                array[i] = "";
+                array[i - 1] = "";
+            } else if (sum.contains("IX")) {
+                result += 9;
+                array[i] = "";
+                array[i - 1] = "";
+
+            } else if (sum.contains("XL")) {
+                result += 40;
+                array[i] = "";
+                array[i - 1] = "";
+
+            } else if (sum.contains("XC")) {
+                result += 90;
+                array[i] = "";
+                array[i - 1] = "";
+
+            } else if (sum.contains("CD")) {
+                result += 400;
+                array[i] = "";
+                array[i - 1] = "";
+
+            } else if (sum.contains("CM")) {
+                result += 900;
+                array[i] = "";
+                array[i - 1] = "";
+            }
+        }
+        for (int i = 0; i < array.length; i++) {
+            if (alphabet.containsKey(s)) {
+                result += alphabet.get(s);
+            }
         }
         return result;
     }
