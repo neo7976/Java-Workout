@@ -1,4 +1,4 @@
-package Easy.Roman13;
+package easy.roman;
 
 public class NotValidateException extends Exception {
     public NotValidateException(String message) {

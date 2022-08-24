@@ -1,4 +1,4 @@
-package Easy.Roman13;
+package easy.roman;
 
 import org.hamcrest.MatcherAssert;
 import org.hamcrest.Matchers;
