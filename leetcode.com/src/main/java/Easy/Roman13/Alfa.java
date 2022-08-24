@@ -21,7 +21,7 @@ public class Alfa {
         }
     }
 
-    public int romanToInteger(String s) {
+    public int romanToInteger(String s) throws NotValidateException {
         int result = 0;
         String[] array = s.split("");
         for (int i = 1; i < array.length; i++) {
@@ -61,6 +61,13 @@ public class Alfa {
                 result += alphabet.get(array[i]);
             }
         }
+        validate(result);
         return result;
+    }
+
+    public void validate(int result) throws NotValidateException {
+        if (!(1 <= result && result <= 3999))
+            throw new NotValidateException("Число больше 3999 или меньше 1");
+            System.out.println("1");
     }
 }

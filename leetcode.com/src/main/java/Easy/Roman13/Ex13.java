@@ -1,11 +1,11 @@
 package Easy.Roman13;
 
 public class Ex13 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NotValidateException {
         Alfa alphabet = new Alfa();
 
         String s = "II";
-        alphabet.romanToInteger(s);
+        System.out.println(alphabet.romanToInteger(s));
         alphabet.entry();
     }
 }
