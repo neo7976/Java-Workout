@@ -1,7 +1,6 @@
 package Easy.Roman13;
 
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.TreeMap;
@@ -29,12 +28,14 @@ public class Roman {
         }
     }
 
-    public String ArabToRoman(int value) {
+    public String arabToRoman(int value) {
         StringBuilder sb = new StringBuilder();
         for (Entry<Integer, String> entry : alphabet.entrySet()) {
-            if (value > entry.getKey()) {
-                sb.append(entry.getValue());
-                value = -entry.getKey();
+            if (value >= entry.getKey()) {
+                while (value >= entry.getKey()) {
+                    sb.append(entry.getValue());
+                    value -= entry.getKey();
+                }
             }
         }
         return sb.toString();
