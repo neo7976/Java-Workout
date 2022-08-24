@@ -28,6 +28,17 @@ public class Roman {
             System.out.printf("Ключ: %4d Значение: %s\n", entry.getKey(), entry.getValue());
         }
     }
+
+    public String ArabToRoman(int value) {
+        StringBuilder sb = new StringBuilder();
+        for (Entry<Integer, String> entry : alphabet.entrySet()) {
+            if (value > entry.getKey()) {
+                sb.append(entry.getValue());
+                value = -entry.getKey();
+            }
+        }
+        return sb.toString();
+    }
 }
 
 
