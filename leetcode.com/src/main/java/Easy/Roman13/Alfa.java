@@ -57,8 +57,8 @@ public class Alfa {
             }
         }
         for (int i = 0; i < array.length; i++) {
-            if (alphabet.containsKey(s)) {
-                result += alphabet.get(s);
+            if (alphabet.containsKey(array[i])) {
+                result += alphabet.get(array[i]);
             }
         }
         return result;

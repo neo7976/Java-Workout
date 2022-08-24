@@ -27,25 +27,23 @@ class AlfaTest {
     }
 
     public static Stream<Arguments> source() {
-        return Stream.of(Arguments.of("I", 1),
+        return Stream.of(
                 Arguments.of("II", 2),
+                Arguments.of("I", 1),
                 Arguments.of("III", 3),
                 Arguments.of("IV", 4),
                 Arguments.of("V", 5),
-                Arguments.of("VI", 6)
+                Arguments.of("VI", 6),
+                Arguments.of("IX", 9),
+                Arguments.of("LVIII", 58),
+                Arguments.of("MCMXCIV", 1994)
         );
     }
 
     @ParameterizedTest
     @MethodSource("source")
     void romanToInteger(String s, int x) {
-
         int result = alfa.romanToInteger(s);
-        MatcherAssert.assertThat(x, Matchers.equalTo(result));
-    }
-
-    @Test
-    void dfgfg(){
-
+        MatcherAssert.assertThat(result, Matchers.equalTo(x));
     }
 }
