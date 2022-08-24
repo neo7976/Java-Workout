@@ -15,7 +15,7 @@ public class Alfa {
         put("M", 1000);
     }};
 
-    public void entry() {
+      public void entry() {
         for (Entry<String, Integer> entry : alphabet.entrySet()) {
             System.out.printf("Ключ:%s Значение: %4d\n", entry.getKey(), entry.getValue());
         }
@@ -68,6 +68,5 @@ public class Alfa {
     public void validate(int result) throws NotValidateException {
         if (!(1 <= result && result <= 3999))
             throw new NotValidateException("Число больше 3999 или меньше 1");
-            System.out.println("1");
     }
 }
