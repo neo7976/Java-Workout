@@ -2,7 +2,7 @@ package easy.array.remove;
 
 public class Remove {
 
-    public String[] arrayInput = {"0", "0", "1", "1", "1", "2", "2", "3", "3", "4"};
+    private String[] arrayInput = {"0", "0", "1", "1", "1", "2", "2", "3", "3", "4"};
 
     public String[] removeDuplicatesFromSortedArray(String[] array) {
         int count = 0;
@@ -31,7 +31,18 @@ public class Remove {
         return array;
     }
 
-//    public void pivoting(int[] array, int pi) {
+    public void setArrayInput(int[] arrayInput) {
+        String[] arraysStr = new String[arrayInput.length];
+        for (int i = 0; i < arrayInput.length; i++) {
+            arraysStr[i] = String.valueOf(arrayInput[i]);
+        }
+        this.arrayInput = arraysStr;
+    }
+
+    public String[] getArrayInput() {
+        return arrayInput;
+    }
+    //    public void pivoting(int[] array, int pi) {
 //        int left = 0;
 //        int right = 0;
 //        int pivot = array[pi];
