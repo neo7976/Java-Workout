@@ -1,4 +1,4 @@
-package sixku;
+package codewars.sixku;
 
 import java.util.stream.IntStream;
 
