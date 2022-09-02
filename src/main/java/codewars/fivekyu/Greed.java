@@ -14,7 +14,7 @@ import java.util.Map.Entry;
 import java.util.stream.Collectors;
 
 public class Greed {
-//todo нет рабочего решения с хорошим алгоритмом
+    //todo нет рабочего решения с хорошим алгоритмом
     public int greedy(int[] dice) {
 //        Random random = new Random();
 //        int sum = 0;
@@ -49,23 +49,27 @@ public class Greed {
         System.out.println(list);
 
         for (Entry<List<Integer>, Integer> listIntegerEntry : sortedMap.entrySet()) {
-
             for (int i = 0; i < 3; i++) {
                 if (list.size() >= 3) {
                     List<Integer> listToCopy = list.subList(i, i + 3);
 
                     if (listToCopy.equals(listIntegerEntry.getKey())) {
                         System.out.println("Ключ " + listIntegerEntry.getKey() + ": Cписок:" + listToCopy + "-" + listToCopy.equals(listIntegerEntry.getKey()));
+//                        list.remove(i);
+//                        list.remove(i+1);
+//                        list.remove(i+2);
                         list.removeAll(listToCopy);
                     }
                 }
             }
-        }
-        System.out.println(list);
-        for (Entry<List<Integer>, Integer> listIntegerEntry : sortedMap.entrySet()) {
-            for (Integer integer : list) {
-                System.out.println("Ключ " + listIntegerEntry.getKey() + ": Cписок:" + integer + "-" + list.containsAll(listIntegerEntry.getKey()));
-//                list.remove(integer);
+            System.out.println(list);
+            for (int j = 0; j < list.size(); j++) {
+                List<Integer> listToCopy = list.subList(j, j + 1);
+                if (listToCopy.equals(listIntegerEntry.getKey())) {
+                    System.out.println("Ключ " + listIntegerEntry.getKey() + ": Cписок:" + listToCopy + "-" + listToCopy.equals(listIntegerEntry.getKey()));
+                    list.removeAll(listToCopy);
+                    System.out.println(list);
+                }
             }
         }
         return sum;
