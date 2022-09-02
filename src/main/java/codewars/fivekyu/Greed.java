@@ -1,9 +1,13 @@
 package codewars.fivekyu;
 
+import com.sun.source.tree.BreakTree;
 import static java.util.Comparator.reverseOrder;
+import org.apache.commons.collections.CollectionUtils;
+import org.w3c.dom.ls.LSOutput;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -14,14 +18,14 @@ import java.util.Random;
 import java.util.stream.Collectors;
 
 public class Greed {
+
     public int greedy(int[] dice) {
-        Random random = new Random();
+//        Random random = new Random();
+//        int sum = 0;
+//        for (int i = 0; i < array.length; i++) {
+//            array[i] = random.nextInt(1, 7);
+//        }
         int sum = 0;
-        int[] chance = new int[5];
-        for (int i = 0; i < chance.length; i++) {
-            chance[i] = random.nextInt(1, 7);
-        }
-        System.out.println(Arrays.toString(chance));
         Map<List<Integer>, Integer> map = new HashMap<>() {{
             put(Arrays.asList(1, 1, 1), 1000);
             put(Arrays.asList(6, 6, 6), 600);
@@ -39,13 +43,27 @@ public class Greed {
                         (e1, e2) -> e1,
                         LinkedHashMap::new));
 
+        List<Integer> list = Arrays.stream(dice).boxed().toList();
+        System.out.println(list);
         for (Entry<List<Integer>, Integer> listIntegerEntry : sortedMap.entrySet()) {
-            List<Integer> list = Arrays.stream(chance).boxed().toList();
-            System.out.println(list);
+            System.out.println("Ключ " + listIntegerEntry.getKey() + ":" + list.containsAll(listIntegerEntry.getKey()));
 
         }
         return sum;
     }
+
+    public <T> boolean myListContains(List<T> list, T element) {
+        if (list == null || element == null)
+            return false;
+        if (list.isEmpty())
+            return false;
+        for (T t : list) {
+            if (element.equals(t))
+                return true;
+        }
+        return false;
+    }
+
 }
 
 
