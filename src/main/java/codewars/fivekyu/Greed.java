@@ -48,13 +48,14 @@ public class Greed {
 //            System.out.println("Ключ: " + integers + " - " + list.containsAll(integers));
 //        }
         for (Entry<List<Integer>, Integer> listIntegerEntry : sortedMap.entrySet()) {
-            if (list.containsAll(listIntegerEntry.getKey())) {
-                System.out.println("Ключ " + listIntegerEntry.getKey() + ": Да");
-                List<Integer> ListToCopy = new ArrayList<>();
-//                list.add()
+//            if (list.containsAll(listIntegerEntry.getKey())) {
+//                System.out.println("Ключ " + listIntegerEntry.getKey() + ": Да");
+            List<Integer> listToCopy = list.subList(0, 3);
+            System.out.println("Ключ " + listIntegerEntry.getKey() + ": Cписок:" + listToCopy + "-" + listToCopy.equals(listIntegerEntry.getKey()));
 
-            }
+
         }
+
         return sum;
     }
 
