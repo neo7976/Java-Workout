@@ -60,13 +60,14 @@ public class Greed {
                     }
                 }
             }
+        }
+        System.out.println(list);
+        for (Entry<List<Integer>, Integer> listIntegerEntry : sortedMap.entrySet()) {
             for (Integer integer : list) {
-                System.out.println("Ключ " + listIntegerEntry.getKey() + ": Cписок:" + integer + "-" + list.equals(listIntegerEntry.getKey()));
+                System.out.println("Ключ " + listIntegerEntry.getKey() + ": Cписок:" + integer + "-" + list.containsAll(listIntegerEntry.getKey()));
 //                list.remove(integer);
             }
         }
-
-
         return sum;
     }
 }
