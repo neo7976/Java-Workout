@@ -3,14 +3,14 @@ package codewars.fivekyu;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.HashSet;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.Random;
 import java.util.stream.Collectors;
 
 public class Greed {
@@ -39,46 +39,36 @@ public class Greed {
                         (e1, e2) -> e1,
                         LinkedHashMap::new));
 
-        List<Integer> list = Arrays.stream(dice).boxed().sorted().toList();
+//        List<Integer> listDel = Arrays.stream(dice).boxed().sorted().toList();
+//        List<Integer> list = new ArrayList<>(listDel);
+        List<Integer> list = new ArrayList<>();
+        for (int die : dice) {
+            list.add(die);
+        }
+        Collections.sort(list);
         System.out.println(list);
-//        HashSet<List<Integer>> set = new HashSet<>(map.keySet());
-//        System.out.println(set);
 
-//        for (List<Integer> integers : set) {
-//            System.out.println("Ключ: " + integers + " - " + list.containsAll(integers));
-//        }
         for (Entry<List<Integer>, Integer> listIntegerEntry : sortedMap.entrySet()) {
-//            if (list.containsAll(listIntegerEntry.getKey())) {
-//                System.out.println("Ключ " + listIntegerEntry.getKey() + ": Да");
+
             for (int i = 0; i < 3; i++) {
                 if (list.size() >= 3) {
                     List<Integer> listToCopy = list.subList(i, i + 3);
+
                     if (listToCopy.equals(listIntegerEntry.getKey())) {
                         System.out.println("Ключ " + listIntegerEntry.getKey() + ": Cписок:" + listToCopy + "-" + listToCopy.equals(listIntegerEntry.getKey()));
-//                        list.removeAll(listToCopy);
+                        list.removeAll(listToCopy);
                     }
                 }
             }
-            for (Integer x : list) {
-                System.out.println("Ключ " + listIntegerEntry.getKey() + ": Cписок:" + x + "-" + list.equals(listIntegerEntry.getKey()));
-//                list.remove(x);
+            for (Integer integer : list) {
+                System.out.println("Ключ " + listIntegerEntry.getKey() + ": Cписок:" + integer + "-" + list.equals(listIntegerEntry.getKey()));
+//                list.remove(integer);
             }
         }
+
+
         return sum;
     }
-
-    public <T> boolean myListContains(List<T> list, List<T> element) {
-        if (list == null || element == null)
-            return false;
-        if (list.isEmpty())
-            return false;
-        for (T t : list) {
-            if (element.equals(t))
-                return true;
-        }
-        return false;
-    }
-
 }
 
 
