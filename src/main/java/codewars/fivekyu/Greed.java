@@ -50,15 +50,18 @@ public class Greed {
                     if (listToCopy.equals(listIntegerEntry.getKey())) {
                         System.out.println("Ключ " + listIntegerEntry.getKey() + ": Cписок:" + listToCopy + "-" + listToCopy.equals(listIntegerEntry.getKey()));
                         list.subList(i, i + 3).clear();
+                        sum += listIntegerEntry.getValue();
+                        System.out.println(list);
                     }
                 }
             }
-            System.out.println(list);
+
             for (int j = 0; j < list.size(); j++) {
                 List<Integer> listToCopy = list.subList(j, j + 1);
                 if (listToCopy.equals(listIntegerEntry.getKey())) {
                     System.out.println("Ключ " + listIntegerEntry.getKey() + ": Cписок:" + listToCopy + "-" + listToCopy.equals(listIntegerEntry.getKey()));
                     list.set(j, 0);
+                    sum += listIntegerEntry.getValue();
                     System.out.println(list);
                 }
             }
