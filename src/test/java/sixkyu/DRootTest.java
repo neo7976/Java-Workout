@@ -1,6 +1,6 @@
-package sixku;
+package sixkyu;
 
-import codewars.sixku.DRoot;
+import codewars.sixkyu.DRoot;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;

@@ -1,4 +1,4 @@
-package codewars.sixku;
+package codewars.sixkyu;
 
 /**
  * Цифровой корень — это рекурсивная сумма всех цифр числа.

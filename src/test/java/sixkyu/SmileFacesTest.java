@@ -1,6 +1,6 @@
-package sixku;
+package sixkyu;
 
-import codewars.sixku.SmileFaces;
+import codewars.sixkyu.SmileFaces;
 import org.junit.jupiter.api.AfterEach;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
