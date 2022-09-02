@@ -36,6 +36,6 @@ class GreedTest {
     @ParameterizedTest
     @MethodSource("source")
     public void testExample(int[] array, int expected) {
-        assertEquals(expected, greed.greedy(array));
+        assertEquals(expected, greed.greedy1(array));
     }
 }
