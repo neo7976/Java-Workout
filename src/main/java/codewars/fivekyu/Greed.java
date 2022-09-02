@@ -50,12 +50,20 @@ public class Greed {
         for (Entry<List<Integer>, Integer> listIntegerEntry : sortedMap.entrySet()) {
 //            if (list.containsAll(listIntegerEntry.getKey())) {
 //                System.out.println("Ключ " + listIntegerEntry.getKey() + ": Да");
-            List<Integer> listToCopy = list.subList(0, 3);
-            System.out.println("Ключ " + listIntegerEntry.getKey() + ": Cписок:" + listToCopy + "-" + listToCopy.equals(listIntegerEntry.getKey()));
-
-
+            for (int i = 0; i < 3; i++) {
+                if (list.size() >= 3) {
+                    List<Integer> listToCopy = list.subList(i, i + 3);
+                    if (listToCopy.equals(listIntegerEntry.getKey())) {
+                        System.out.println("Ключ " + listIntegerEntry.getKey() + ": Cписок:" + listToCopy + "-" + listToCopy.equals(listIntegerEntry.getKey()));
+//                        list.removeAll(listToCopy);
+                    }
+                }
+            }
+            for (Integer x : list) {
+                System.out.println("Ключ " + listIntegerEntry.getKey() + ": Cписок:" + x + "-" + list.equals(listIntegerEntry.getKey()));
+//                list.remove(x);
+            }
         }
-
         return sum;
     }
 
