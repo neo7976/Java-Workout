@@ -14,7 +14,7 @@ import java.util.Map.Entry;
 import java.util.stream.Collectors;
 
 public class Greed {
-
+//todo нет рабочего решения с хорошим алгоритмом
     public int greedy(int[] dice) {
 //        Random random = new Random();
 //        int sum = 0;
