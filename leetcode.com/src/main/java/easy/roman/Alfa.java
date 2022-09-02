@@ -12,7 +12,12 @@ public class Alfa {
         put("L", 50);
         put("C", 100);
         put("D", 500);
-        put("M", 1000);
+        put("IV", 4);
+        put("IX", 9);
+        put("XL", 40);
+        put("XC", 90);
+        put("CD", 400);
+        put("CM", 900);
     }};
 
     public void entry() {
@@ -26,28 +31,8 @@ public class Alfa {
         String[] array = s.split("");
         for (int i = 1; i < array.length; i++) {
             String sum = array[i - 1].concat(array[i]);
-            if (sum.contains("IV")) {
-                result += 4;
-                array[i] = "";
-                array[i - 1] = "";
-            } else if (sum.contains("IX")) {
-                result += 9;
-                array[i] = "";
-                array[i - 1] = "";
-            } else if (sum.contains("XL")) {
-                result += 40;
-                array[i] = "";
-                array[i - 1] = "";
-            } else if (sum.contains("XC")) {
-                result += 90;
-                array[i] = "";
-                array[i - 1] = "";
-            } else if (sum.contains("CD")) {
-                result += 400;
-                array[i] = "";
-                array[i - 1] = "";
-            } else if (sum.contains("CM")) {
-                result += 900;
+            if (alphabet.containsKey(sum)) {
+                result += alphabet.get(sum);
                 array[i] = "";
                 array[i - 1] = "";
             }
