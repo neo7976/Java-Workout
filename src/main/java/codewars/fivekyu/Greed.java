@@ -14,7 +14,7 @@ import java.util.Map.Entry;
 import java.util.stream.Collectors;
 
 public class Greed {
-    //todo нет рабочего решения с хорошим алгоритмом
+    //todo добить присвоение значений по ключу вместо выводы на экран
     public int greedy(int[] dice) {
 //        Random random = new Random();
 //        int sum = 0;
@@ -38,14 +38,8 @@ public class Greed {
                         Map.Entry::getValue,
                         (e1, e2) -> e1,
                         LinkedHashMap::new));
-
-//        List<Integer> listDel = Arrays.stream(dice).boxed().sorted().toList();
-//        List<Integer> list = new ArrayList<>(listDel);
-        List<Integer> list = new ArrayList<>();
-        for (int die : dice) {
-            list.add(die);
-        }
-        Collections.sort(list);
+        List<Integer> listDel = Arrays.stream(dice).boxed().sorted().toList();
+        List<Integer> list = new ArrayList<>(listDel);
         System.out.println(list);
 
         for (Entry<List<Integer>, Integer> listIntegerEntry : sortedMap.entrySet()) {
@@ -55,10 +49,7 @@ public class Greed {
 
                     if (listToCopy.equals(listIntegerEntry.getKey())) {
                         System.out.println("Ключ " + listIntegerEntry.getKey() + ": Cписок:" + listToCopy + "-" + listToCopy.equals(listIntegerEntry.getKey()));
-//                        list.remove(i);
-//                        list.remove(i+1);
-//                        list.remove(i+2);
-                        list.removeAll(listToCopy);
+                        list.subList(i, i + 3).clear();
                     }
                 }
             }
@@ -67,7 +58,7 @@ public class Greed {
                 List<Integer> listToCopy = list.subList(j, j + 1);
                 if (listToCopy.equals(listIntegerEntry.getKey())) {
                     System.out.println("Ключ " + listIntegerEntry.getKey() + ": Cписок:" + listToCopy + "-" + listToCopy.equals(listIntegerEntry.getKey()));
-                    list.removeAll(listToCopy);
+                    list.set(j, 0);
                     System.out.println(list);
                 }
             }
