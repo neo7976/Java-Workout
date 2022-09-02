@@ -1,15 +1,11 @@
 package codewars.fivekyu;
 
-import com.sun.source.tree.BreakTree;
-import static java.util.Comparator.reverseOrder;
-import org.apache.commons.collections.CollectionUtils;
-import org.w3c.dom.ls.LSOutput;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -43,16 +39,26 @@ public class Greed {
                         (e1, e2) -> e1,
                         LinkedHashMap::new));
 
-        List<Integer> list = Arrays.stream(dice).boxed().toList();
+        List<Integer> list = Arrays.stream(dice).boxed().sorted().toList();
         System.out.println(list);
-        for (Entry<List<Integer>, Integer> listIntegerEntry : sortedMap.entrySet()) {
-            System.out.println("Ключ " + listIntegerEntry.getKey() + ":" + list.containsAll(listIntegerEntry.getKey()));
+//        HashSet<List<Integer>> set = new HashSet<>(map.keySet());
+//        System.out.println(set);
 
+//        for (List<Integer> integers : set) {
+//            System.out.println("Ключ: " + integers + " - " + list.containsAll(integers));
+//        }
+        for (Entry<List<Integer>, Integer> listIntegerEntry : sortedMap.entrySet()) {
+            if (list.containsAll(listIntegerEntry.getKey())) {
+                System.out.println("Ключ " + listIntegerEntry.getKey() + ": Да");
+                List<Integer> ListToCopy = new ArrayList<>();
+//                list.add()
+
+            }
         }
         return sum;
     }
 
-    public <T> boolean myListContains(List<T> list, T element) {
+    public <T> boolean myListContains(List<T> list, List<T> element) {
         if (list == null || element == null)
             return false;
         if (list.isEmpty())
