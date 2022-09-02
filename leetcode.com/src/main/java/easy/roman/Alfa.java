@@ -7,17 +7,18 @@ import java.util.Map.Entry;
 public class Alfa {
     public Map<String, Integer> alphabet = new HashMap<>() {{
         put("I", 1);
-        put("V", 5);
-        put("X", 10);
-        put("L", 50);
-        put("C", 100);
-        put("D", 500);
         put("IV", 4);
+        put("V", 5);
         put("IX", 9);
+        put("X", 10);
         put("XL", 40);
+        put("L", 50);
         put("XC", 90);
+        put("C", 100);
         put("CD", 400);
+        put("D", 500);
         put("CM", 900);
+        put("M", 1000);
     }};
 
     public void entry() {
@@ -30,11 +31,14 @@ public class Alfa {
         int result = 0;
         String[] array = s.split("");
         for (int i = 1; i < array.length; i++) {
-            String sum = array[i - 1].concat(array[i]);
-            if (alphabet.containsKey(sum)) {
-                result += alphabet.get(sum);
-                array[i] = "";
-                array[i - 1] = "";
+            if (!array[i - 1].equals("") && !array[i].equals("")) {
+                String sum = array[i - 1].concat(array[i]);
+                if (alphabet.containsKey(sum)) {
+                    result += alphabet.get(sum);
+                    array[i] = "";
+                    array[i - 1] = "";
+                    System.out.println(sum);
+                }
             }
         }
         for (int i = 0; i < array.length; i++) {
