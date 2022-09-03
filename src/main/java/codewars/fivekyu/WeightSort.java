@@ -2,6 +2,7 @@ package codewars.fivekyu;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.stream.Collectors;
 
 public class WeightSort {
 
@@ -41,6 +42,20 @@ public class WeightSort {
             }
         });
         return String.join(" ", split).trim();
+    }
+
+    public String orderWeight2(String strng) {
+        return
+                Arrays.stream(strng.trim().split(" "))
+                        .sorted(Comparator
+                                .comparing(WeightSort::sumDigits)
+                                .thenComparing(String::compareTo))
+                        .collect(Collectors.joining(" ")).trim();
+
+    }
+
+    private static Integer sumDigits(String s) {
+        return s.chars().map(c -> c - 48).sum();
     }
 }
 
