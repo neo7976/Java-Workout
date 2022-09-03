@@ -55,7 +55,7 @@ public class WeightSort {
     }
 
     private static Integer sumDigits(String s) {
-        return s.chars().map(c -> c - 48).sum();
+        return s.chars().map(Character::getNumericValue).sum();
     }
 }
 
