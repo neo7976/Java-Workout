@@ -37,7 +37,6 @@ public class Alfa {
                     result += alphabet.get(sum);
                     array[i] = "";
                     array[i - 1] = "";
-                    System.out.println(sum);
                 }
             }
         }
