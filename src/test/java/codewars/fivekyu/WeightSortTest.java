@@ -36,4 +36,10 @@ class WeightSortTest {
     void orderWeight(String str, String expected) {
         Assertions.assertEquals(expected, weightSort.orderWeight(str));
     }
+
+    @ParameterizedTest
+    @MethodSource("source")
+    void orderWeight1(String str, String expected) {
+        Assertions.assertEquals(expected, weightSort.orderWeight1(str));
+    }
 }

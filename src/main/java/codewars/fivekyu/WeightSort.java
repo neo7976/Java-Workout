@@ -21,13 +21,7 @@ public class WeightSort {
         public int compare(String o1, String o2) {
             int n = o1.chars().reduce(0, (x, y) -> x + (y - '0'));
             int m = o2.chars().reduce(0, (x, y) -> x + (y - '0'));
-            if (n > m)
-                return 1;
-            else if (n < m)
-                return -1;
-            else {
-                return o1.compareTo(o2);
-            }
+            return (n - m) != 0 ? n - m : o1.compareTo(o2);
         }
 
         @Override
@@ -35,4 +29,17 @@ public class WeightSort {
             return false;
         }
     };
+
+    public String orderWeight1(String string) {
+        String[] split = string.split(" ");
+        Arrays.sort(split, new Comparator<String>() {
+            public int compare(String a, String b) {
+                int aWeight = a.chars().map(Character::getNumericValue).sum();
+                int bWeight = b.chars().map(c -> Character.getNumericValue(c)).sum();
+                return aWeight - bWeight != 0 ? aWeight - bWeight : a.compareTo(b);
+            }
+        });
+        return String.join(" ", split);
+    }
 }
+
