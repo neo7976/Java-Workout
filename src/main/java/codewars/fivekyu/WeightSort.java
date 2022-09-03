@@ -6,7 +6,7 @@ import java.util.Comparator;
 public class WeightSort {
 
     public String orderWeight(String string) {
-        String[] array = string.split(" ");
+        String[] array = string.trim().split(" ");
         Arrays.sort(array, comparator);
         StringBuilder sb = new StringBuilder();
         for (String s : array) {
@@ -30,8 +30,9 @@ public class WeightSort {
         }
     };
 
+    //Добавил trim чтобы проходили пробелы
     public String orderWeight1(String string) {
-        String[] split = string.split(" ");
+        String[] split = string.trim().split(" ");
         Arrays.sort(split, new Comparator<String>() {
             public int compare(String a, String b) {
                 int aWeight = a.chars().map(Character::getNumericValue).sum();
@@ -39,7 +40,7 @@ public class WeightSort {
                 return aWeight - bWeight != 0 ? aWeight - bWeight : a.compareTo(b);
             }
         });
-        return String.join(" ", split);
+        return String.join(" ", split).trim();
     }
 }
 
