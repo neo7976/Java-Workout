@@ -22,6 +22,7 @@ public class SumDigPower {
         return listReturn;
     }
 
+    //2 Способ с интересным решением
     public List<Long> sumDigPow1(long a, long b) {
         return LongStream.rangeClosed(a, b)   //Создание интервала от a до b включительно
                 .filter(i -> isValid(i))
