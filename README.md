@@ -45,7 +45,7 @@
 
 ### ***Александр Лукин***
 
-1. [Поиск суммы в массиве равное k](src\main\java\youtube\alexlukin)
+1. [Поиск суммы в массиве равное k](src/main/java/youtube/alexlukin)
 
 
 
