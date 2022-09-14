@@ -49,6 +49,8 @@
 
 2. [Поиск знаменитости](src/main/java/youtube/alexlukin/celebrity/Celebrity.java)
 
+3. [Поиск ближайшего теплого дня]()
+
 
 
 
