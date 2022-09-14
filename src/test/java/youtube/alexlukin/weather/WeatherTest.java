@@ -22,10 +22,18 @@ class WeatherTest {
     }
 
     @Test
-    void findSunnyDay() {
+    void findSunnyDay_test() {
         int[] expected = new int[]{
                 2, 1, 4, 2, 1, 1, 0
         };
         Assertions.assertEquals(Arrays.toString(expected), Arrays.toString(weather.findSunnyDay(new int[]{13, 12, 15, 11, 9, 12, 16})));
+    }
+
+    @Test
+    void findSunnyDayForStack_test() {
+        int[] expected = new int[]{
+                2, 1, 4, 2, 1, 1, 0
+        };
+        Assertions.assertEquals(Arrays.toString(expected), Arrays.toString(weather.findSunnyDayForStack(new int[]{13, 12, 15, 11, 9, 12, 16})));
     }
 }
