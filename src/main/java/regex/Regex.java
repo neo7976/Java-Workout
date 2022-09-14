@@ -1,4 +1,4 @@
-package youtube.betry.string;
+package regex;
 
 /**
  * https://regexlearn.com/learn/regex101
@@ -13,6 +13,11 @@ public class Regex {
         System.out.println(s1.replaceAll("Пи[^в]о", "5")); //заменить любой кроме 'в' (стр.6)
         String alfa = "abcdefghijklmnopqrstuvwxyz";
         System.out.println(alfa.replaceAll("[e-o]", "1")); //заменяет в диапазоне  (стр.7)
+
+        alfa = "br ber beer";
+        System.out.println("\nИспользование звездочки:\n" +
+                "Было: " + alfa + ". Стало: " + alfa.replaceAll("be*r", "1")); //заменяет в диапазоне  (стр.7)
+
 
     }
 }
