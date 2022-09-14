@@ -45,7 +45,9 @@
 
 ### ***Александр Лукин***
 
-1. [Поиск суммы в массиве равное k](src/main/java/youtube/alexlukin)
+1. [Поиск суммы в массиве равное k](src/main/java/youtube/alexlukin/TwoSum.java) -> описание [{...}]()
+
+2. [Поиск знаменитости](src/main/java/youtube/alexlukin/celebrity/Celebrity.java)
 
 
 
