@@ -53,6 +53,8 @@
 
 3. [Поиск ближайшего теплого дня](src/main/java/youtube/alexlukin/weather/Weather.java)
 
+4. [Поиск количества путей](src/main/java/youtube/alexlukin/wayrobot). Задача на динамическое программирование.
+
 ### ***Hashcoder***
 
 **Задача с собеседования из Яндекса**
