@@ -70,3 +70,7 @@
 1. [Регулярные выражения, чтобы лучше использовать String](src/main/java/regex)
    -> ссылка на сайт для тренировки [{regex}](https://regexlearn.com/learn/regex101)
 
+# Многопоточка
+
+Нажми [сюда](src/main/java/thread)
+
