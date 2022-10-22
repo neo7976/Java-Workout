@@ -33,7 +33,7 @@
    описание [{...}](https://github.com/neo7976/Java-Workout/tree/main/src/main/java/codewars/sixkyu#%D1%80%D0%B0%D0%B2%D0%BD%D1%8B%D0%B5-%D1%81%D1%82%D0%BE%D1%80%D0%BE%D0%BD%D1%8B-%D0%BC%D0%B0%D1%81%D1%81%D0%B8%D0%B2%D0%B0)
 7. [Очередь в супермаркет](src/main/java/codewars/sixkyu/Solution.java)
    -> описание [{...}]()
-8. Сортировка по имеющимся цифрам в строке
+8. Сортировка по имеющимся цифрам в [строке](https://github.com/neo7976/Java-Workout/blob/ed859df6f546a87340c4b26ac05561348c161dc1/src/main/java/codewars/sixkyu/Order.java) 
 
 ### ***5 Уровень***
 
