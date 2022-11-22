@@ -1,0 +1,1 @@
+https://www.examclouds.com/ru/java/java-core-russian/lesson23-tasks
