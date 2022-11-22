@@ -12,6 +12,10 @@
 
 # Codewars
 
+### ***7 Уровень***
+
+1. [В порядке убывания.](src\main\java\codewars\sevenkyu\DescendingOrder.java)
+
 ### ***6 Уровень***
 
 1. [Цифровой корень.](src/main/java/codewars/sixkyu/DRoot.java)
