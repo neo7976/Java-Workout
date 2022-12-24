@@ -15,6 +15,7 @@
 ### ***7 Уровень***
 
 1. [В порядке убывания.](src\main\java\codewars\sevenkyu\DescendingOrder.java)
+2. Перевод числа из десятичной системы в [двоичную](src/main/java/codewars/sevenkyu/Kata.java)
 
 ### ***6 Уровень***
 
