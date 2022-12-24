@@ -19,4 +19,8 @@ public class Kata {
                 a, b, result, a, b, a + b, result);
         return result;
     }
+
+    public String binaryAdditionSecond(int a, int b) {
+        return Integer.toBinaryString(a + b);
+    }
 }

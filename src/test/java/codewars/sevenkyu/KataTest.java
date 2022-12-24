@@ -40,4 +40,10 @@ class KataTest {
     void binaryAddition(int a, int b, String expected) {
         Assertions.assertEquals(expected, kata.binaryAddition(a, b));
     }
+
+    @ParameterizedTest
+    @MethodSource("source")
+    void binaryAdditionSecond(int a, int b, String expected) {
+        Assertions.assertEquals(expected, kata.binaryAdditionSecond(a, b));
+    }
 }
